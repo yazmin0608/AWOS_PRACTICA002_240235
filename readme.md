@@ -2,7 +2,7 @@
 
 ---
 <p align = "judtify">
-En la siguiente práctica se realizarán pequeños ejercicios de repaso para comprender la sintaxis de Java Script para el manejo de variables,procesos y memoria en el contexto del desarrollo web orientado a servicios.
+En la siguiente práctica se realizarán pequeños ejercicios de repaso para comprender la sintaxis de Java Script para el manejo de variables, procesos y memoria en el contexto del desarrollo web orientado a servicios.
 </p>
 
 ---
