@@ -125,3 +125,58 @@ lastLogin = new Date("2025/12/31");
 console.log("Test 2 - Fecha de ultimo acceso es diferente a la fecha de hoy");
 console.log(`La fecha del último acceso es: ${lastLogin}`);
 console.log(`El usuario logeado es: ${isNewUser()?"Nuevo Usuario": "Usuario Antiguo"}`);
+
+//6. Funciones Anónimas con parametros (Version Arrow o Lambda)
+
+    const sumar=(a,b)=>{
+        let resultado=a+b;
+        return resultado;
+    }
+
+    console.warn("6. Funciones Anónimas con Parámetros")
+    console.log(`El resultado de la suma de 15 + 83 es: ${sumar(15,83)}`);
+
+
+    /**
+     * Cuando la funcion anónima tiene  solo ianlínea de operación se puede usar 
+     * una versión simplificada que no usa {} llaves, ni la palabra reservada (return)
+     */
+
+    const multiplicar=(a,b)=> a*b
+    console.log(`El resultado de la multipilcacion de 15 * 125 es: ${multiplicar(15,125)}`);
+
+    //7. Funciones Callback (Regreso de Llamado)
+
+    console.warn("7. Funciones Anónimas Callback (Respuesta)")
+
+
+    const recoverPassword= function(email,callback){
+        //Generamos el código a enviar al usuario
+        const recoveryCode=Math.floor(1000000+Math.random()*900000)
+
+        console.log(`
+=======================================================================
+Solicitud de recuperacion recibida
+Correo del Usuario solicitante: ${email}
+Generando código de recuperación...
+Código de seguridad generado:${recoveryCode}
+Enviando el correo al usuario
+Correo enviado a: ${email}, con el código de seguridad :${recoveryCode}
+=======================================================================`);
+    
+
+    //Definiendo la respuesta del sistema
+
+    const response={
+        status:"OK",
+        message:"Código de recuperación enviado satisfactoriamente."
+    };
+
+    callback(response);
+    };
+
+    //Invocación de una función callback 
+    recoverPassword("yazmin@gmail.com", function(systemResponse){
+        console.log("Respuesta del sitema")
+        console.log(systemResponse.message);
+    });
